@@ -114,6 +114,6 @@ h6 {
 }
 
 a {
-  color: #f00;
+  color: rgb(11, 117, 239);
   @apply underline;
 }
