@@ -1,18 +1,35 @@
+"use client";
+
+import { useState } from "react";
+
 export default function Home() {
+  const [mkd, setMkd] = useState("");
+
   return (
-    <div className="flex flex-row h-full m-5 gap-3">
-      <div className="left-0 border border-black dark:border-gray-500 h-full w-1/2">
+    <div className="flex flex-col lg:flex-row h-screen m-5 gap-3">
+      <div className="border border-black dark:border-gray-500 flex flex-col w-full">
         <div className="m-6 border border-black dark:border-gray-500">
           <h1 className="text-2xl font-bold p-3 text-center">
             Write Markdown here
           </h1>
         </div>
+        <div className="ml-6 mr-6 mb-6 border p-3 flex-grow">
+          <textarea
+            className="w-full h-full p-3"
+            onChange={(e) => setMkd(e.target.value)}
+          ></textarea>
+        </div>
       </div>
-      <div className="right-0 border border-black dark:border-gray-500 h-full w-1/2">
+      <div className="border border-black dark:border-gray-500 flex flex-col h-full w-full">
         <div className="m-6 border border-black dark:border-gray-500">
           <h1 className="text-2xl font-bold p-3 text-center">
             Markdown result here
           </h1>
+        </div>
+        <div className="ml-6 mr-6 mb-6 border p-3 flex-grow">
+          <div className="content bg-black dark:bg-gray-500 w-full h-full p-3">
+            {mkd}
+          </div>
         </div>
       </div>
     </div>
