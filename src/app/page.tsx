@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { marked } from "marked";
 
 export default function Home() {
   const [mkd, setMkd] = useState("");
@@ -16,7 +17,7 @@ export default function Home() {
         <div className="ml-6 mr-6 mb-6 border p-3 flex-grow">
           <textarea
             className="w-full h-full p-3"
-            onChange={(e) => setMkd(e.target.value)}
+            onChange={(e) => setMkd(marked(e.target.value))}
           ></textarea>
         </div>
       </div>
@@ -27,9 +28,12 @@ export default function Home() {
           </h1>
         </div>
         <div className="ml-6 mr-6 mb-6 border p-3 flex-grow">
-          <div className="content bg-black dark:bg-gray-500 w-full h-full p-3">
-            {mkd}
-          </div>
+          <div
+            className="content bg-black dark:bg-gray-500 w-full h-full p-3"
+            dangerouslySetInnerHTML={{
+              __html: mkd,
+            }}
+          ></div>
         </div>
       </div>
     </div>

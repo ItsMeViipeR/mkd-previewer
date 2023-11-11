@@ -72,31 +72,48 @@ hr {
   width: 100%;
 }
 
-header {
-  background-color: #ffffff;
-}
-
-.dark header {
-  background-color: #020817;
-}
-
-.loader {
-  -webkit-animation: spin 2s linear infinite; /* Safari */
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 * {
   @apply border-border;
 }
 body {
   @apply bg-background text-foreground;
+}
+
+ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+h1 {
+  font-size: 2em; /* Adjust the value as needed */
+}
+
+h2 {
+  font-size: 1.5em; /* Adjust the value as needed */
+}
+
+h3 {
+  font-size: 1.17em; /* Adjust the value as needed */
+}
+
+h4 {
+  font-size: 1em; /* Adjust the value as needed */
+}
+
+h5 {
+  font-size: 0.83em; /* Adjust the value as needed */
+}
+
+h6 {
+  font-size: 0.67em; /* Adjust the value as needed */
+}
+
+a {
+  color: #f00;
+  @apply underline;
 }
