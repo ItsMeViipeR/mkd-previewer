@@ -28,9 +28,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex flex-col h-full">
-            <div className="container">{children}</div>
-          </div>
+          <div className="flex flex-col h-full">{children}</div>
         </ThemeProvider>
       </body>
     </html>
