@@ -68,7 +68,6 @@ hr {
   border: none;
   height: 1px;
   background-color: #ccc;
-  margin: 20px 0;
   width: 100%;
 }
 
@@ -116,4 +115,8 @@ h6 {
 a {
   color: rgb(11, 117, 239);
   @apply underline;
+}
+
+.content > *:not(:first-child) {
+  @apply my-2;
 }

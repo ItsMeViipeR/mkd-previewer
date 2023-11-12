@@ -1,10 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { marked } from "marked";
+import hljs from "highlight.js";
+
+import "./dracula.css";
 
 export default function Home() {
   const [mkd, setMkd] = useState("");
+
+  useEffect(() => {
+    hljs.highlightAll();
+  });
 
   return (
     <div className="flex flex-col lg:flex-row h-screen m-5 gap-3">
@@ -17,7 +24,7 @@ export default function Home() {
         <div className="ml-6 mr-6 mb-6 border p-3 flex-grow">
           <textarea
             className="w-full h-full p-3"
-            onChange={(e) => setMkd(marked(e.target.value))}
+            onChange={(e) => setMkd(marked.parse(e.target.value))}
           ></textarea>
         </div>
       </div>
