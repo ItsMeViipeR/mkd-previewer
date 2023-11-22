@@ -36,7 +36,7 @@ export default function Home() {
         </div>
         <div className="ml-6 mr-6 mb-6 border p-3 flex-grow">
           <div
-            className="content bg-black dark:bg-gray-800 w-full h-full p-3"
+            className="content bg-black dark:bg-gray-800 w-full h-full p-3 text-white"
             dangerouslySetInnerHTML={{
               __html: mkd,
             }}
